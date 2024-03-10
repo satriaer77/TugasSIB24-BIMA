@@ -1,0 +1,294 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main
+{
+    /* background-color: blue; */
+    width:70%;
+    margin:0 auto;
+}
+
+
+/* ----- COLOR ----- */
+.fill-light
+{
+    filter: invert(100%) sepia(73%) saturate(201%) hue-rotate(193deg) brightness(117%) contrast(89%);
+}
+.text-primary
+{
+    color: #E73626;
+}
+.text-light
+{
+    color: #FFFFFF;
+}
+
+/* ----- END COLOR ----- */
+
+/* ----- STYLING ----- */
+.text-kanit
+{
+    font-family: 'Kanit', sans-serif;
+}
+.text-spartan
+{
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* ----- END STYLING ----- */
+
+
+
+
+/* ----- HEADER ----- */
+
+#header
+{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    max-width: 30vw;
+    background-color: #FFFFFF;
+    border-radius: 0 0 1rem 1rem;
+    margin: 0 auto;
+    margin-bottom: -2rem;
+    -webkit-box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
+    box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
+    
+}
+.header-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.header-logo
+{
+    margin-bottom: 2rem;
+    transform: scale(1.2);
+}
+
+.header-menu
+{
+    border-radius: 2rem;
+    border: 1px solid #E73626;
+}
+
+.header-menu-container
+{
+    display: flex;
+    justify-content: space-between;
+}
+.header-menu a
+{
+    border-radius: inherit;
+    padding:1rem 2rem;
+}
+.header-menu a:hover
+{
+    opacity: 0.6;
+}
+.header-menu .active
+{
+    border-radius: 2rem;
+    background-color: #E73626;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+
+/* ----- END HEADER ----- */
+
+
+
+
+/* ----- CONTENT ----- */
+#content
+{
+    /* background-color: peru; */
+    min-height:70vh;
+    padding-bottom: 10rem;
+}
+#carousel
+{
+    background-color: #E73626;
+    min-height: 50vh;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+}
+.content-posts h1
+{
+    font-size: 3em;
+    text-align: center;
+    background: -webkit-linear-gradient(#E73626, #FFB200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+}
+.posts-container
+{
+    display: flex;
+    justify-content: space-between ;
+    flex-wrap: wrap;
+}
+
+/* ----- END CONTENT ----- */
+
+
+
+
+/* ----- FOOTER ----- */
+#footer
+{
+    background-color: #E73626;
+    border-radius: 1rem;
+
+}
+
+.footer-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* .footer-logo
+{
+    background-color: aqua;
+} */
+.footer-logo img
+{
+    width: 150%;
+}
+
+.footer-git
+{
+    display: flex;
+    gap: 1rem;
+}
+
+/* ----- END FOOTER ----- */
+
+
+
+
+
+/* ----- COMPONENT ----- */
+.carousel-item
+{
+    width: 100%;
+    min-height: 100%;
+    /* visibility: hidden; */
+    display: none;
+}
+.carousel-item.active
+{
+
+    display: block;
+    visibility: visible;
+}
+
+.slide-lft
+{
+    transition: 0.5s;
+    margin-left: -100%;
+}
+
+
+.button
+{
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    text-align: center;
+}
+.button:hover
+{
+    background-color: transparent;
+}
+.button-primary
+{
+    background-color: #E73626;
+    color: #FFFFFF;
+}
+.button-light
+{
+    background-color: #FFFFFF;
+    color: #E73626;
+}
+.button-primary:hover
+{
+    border: solid 1px #E73626;
+    color: #E73626;
+}
+.button-light:hover
+{
+    border: solid 1px #FFFFFF;
+    color: #FFFFFF;
+}
+
+
+
+
+.card
+{
+    width: 18rem;
+    background-color: #E73626;
+    border-radius: 1rem;
+}
+.card-cover
+{
+    position:relative;
+    z-index:1;
+    height: 10rem;
+    border-radius: inherit;
+}
+.card-title
+{
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+.card-content
+{
+    margin-top:-2rem;
+    position:relative;
+    z-index:2;
+    background-color: #E73626;
+    padding: 1rem 2rem;
+    border-radius: inherit;
+
+}
+.card-button
+{
+    display: block;
+    margin-top: 1rem;
+}
+
+.circle-icon
+{
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    padding: 1rem;
+}
+.circle-icon svg
+{
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 2rem;
+    height: auto;
+}
+
+
+/* ----- END COMPONENT ----- */

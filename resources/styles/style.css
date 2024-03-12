@@ -236,6 +236,28 @@ main
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
+
+.form-comp
+{
+    display: block;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    -webkit-box-shadow: 10px 10px 54px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 54px -26px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 54px -26px rgba(0,0,0,0.75);
+}
+.form-container
+{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    padding: 2rem;
+}
 /* ----- END CONTENT ----- */
 
 
@@ -306,6 +328,8 @@ main
     cursor: pointer;
     border-radius: 1rem;
     text-align: center;
+    outline: none;
+    border: none;
 }
 .button:hover
 {
@@ -391,4 +415,69 @@ main
     border-radius: 1rem;
     color: #E73626;
 }
+
+
+.input-comp
+{
+    padding: 0.7rem 1.2rem;
+    border-radius: 2rem;
+    background-color: #e4dedd;
+    display: flex;
+    flex-direction: column;
+    color: #F8FFFF;
+    gap: 5px;
+}
+.input-comp label
+{
+    color: #E73626;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+.input-comp input[type="text"], input[type="tel"], input[type="email"]
+{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    color: #242424;
+}
+.input-comp select
+{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    color: #242424;
+}
+.input-comp-check
+{
+    display: block;
+    cursor: pointer;
+}
+.input-comp-check span
+{
+    color: #242424;
+}
+
+.input-comp input[type="radio"]
+{
+    border: 1px solid black;
+    display: inline;
+}
+.input-comp textarea
+{
+    border: none;
+    outline: none;
+    height: 5rem;
+    background-color: transparent;
+    color: #242424;
+    resize: none;
+}
+
+
+
 /* ----- END COMPONENT ----- */

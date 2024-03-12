@@ -115,6 +115,7 @@ main
 #content
 {
     /* background-color: peru; */
+    display: block;
     min-height:70vh;
     padding-bottom: 10rem;
 }
@@ -141,7 +142,100 @@ main
     justify-content: space-between ;
     flex-wrap: wrap;
 }
+.content-title-card
+{
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
+    box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
+    margin-top: -5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.content-title-card-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.content-title-card h1
+{
+    font-size: 2.5em;
+    text-wrap: wrap;
+    color: #E73626;
+}
 
+#post-content img
+{
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+#post-content .code
+{
+    position: relative;
+    padding: 1rem 2rem;
+    background-color: #e4dedd;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+#post-content .code::before
+{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top:0;
+    width: 1rem;
+    height: 100%;
+    padding: 0;
+    border-radius: 1rem 0 0 1rem;
+    background-color: #E73626;
+    -webkit-border-radius: 1rem 0 0 1rem;
+    -moz-border-radius: 1rem 0 0 1rem;
+    -ms-border-radius: 1rem 0 0 1rem;
+    -o-border-radius: 1rem 0 0 1rem;
+}
+
+#post-content table
+{
+    background-color: #e4dedd;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+#post-content table th
+{
+    padding: 1rem;
+    color: #FFFFFF;
+    border-radius: 1rem;
+    background-color: #E73626;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+#post-content table td
+{
+    padding: 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
 /* ----- END CONTENT ----- */
 
 
@@ -290,5 +384,11 @@ main
     height: auto;
 }
 
-
+.content-tag
+{
+    border: #E73626 1px solid;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    color: #E73626;
+}
 /* ----- END COMPONENT ----- */

@@ -327,6 +327,28 @@ main
 
 
 /* ----- COMPONENT ----- */
+#carouselDots
+{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+}
+#carouselDots span
+{
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #a09896;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+#carouselDots span.active
+{
+    background-color: #E73626;
+}
 .carousel-item
 {
     width: 100%;
@@ -336,7 +358,6 @@ main
 }
 .carousel-item.active
 {
-
     display: block;
     visibility: visible;
 }

@@ -1,11 +1,22 @@
 const carouselItems = document.querySelectorAll('.carousel-item');
-let carouselIndex = 0;
-let nextIndex = 1;
+var carouselDot     = document.querySelector('#carouselDots');
+let carouselIndex   = 0;
+let nextIndex       = 1;
 
+
+for(let i=0; i < carouselItems.length;i++)
+{
+    carouselDot.insertAdjacentHTML("afterbegin", `<span id=${i}></span>`);
+}
+const carouselDt = document.querySelectorAll('#carouselDots span');
+
+
+console.log(carouselDt);
 function changeItem()
 {
     console.log(nextIndex);
     carouselItems[carouselIndex].classList.remove('active');
+    carouselDt[carouselIndex].classList.remove('active');
 
 
     if(nextIndex >= carouselItems.length-1)
@@ -29,9 +40,9 @@ function changeItem()
     carouselIndex += 1;
     nextIndex += 1;
     carouselItems[carouselIndex].classList.add('active');
+    carouselDt[carouselIndex].classList.add('active');
     setTimeout(changeItem, 3000);
 }
-
 
 changeItem();
 

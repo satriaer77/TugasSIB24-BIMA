@@ -34,7 +34,7 @@ function loadHTML(file, section) {
 
     // const menuHalaman = parseURLParams().get("menu");
     const menuHalaman = document.querySelector('main').dataset.menu;
-    console.log(menuHalaman);
+    // console.log(menuHalaman);
     //============ AJAX with xhr ============//
     const xhr = new XMLHttpRequest();
 

@@ -8,7 +8,7 @@ var pathArray = window.location.pathname.split("/");
 pathArray.unshift(base_url);
 pathArray.pop();
 let url = "";
-
+const menuHalaman = document.querySelector('main').dataset.menu;
 
 for (pathName of pathArray) {
     url += pathName + "/";
@@ -16,16 +16,15 @@ for (pathName of pathArray) {
 // ===> END CREATE BASEURL
 
 
-function parseURLParams() {
+function parseURLParams(param) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    return urlParams;
+    return urlParams.get(param);
 }
 
-const paramsUrl = parseURLParams();
 
-
+// console.log(parseURLParams('id'));
 
 
 
@@ -33,7 +32,7 @@ const paramsUrl = parseURLParams();
 function loadHTML(file, section) {
 
     // const menuHalaman = parseURLParams().get("menu");
-    const menuHalaman = document.querySelector('main').dataset.menu;
+   
     // console.log(menuHalaman);
     //============ AJAX with xhr ============//
     const xhr = new XMLHttpRequest();
@@ -62,4 +61,5 @@ const footerSection = document.getElementById("footer");
 loadHTML(url + 'templates/header.html', headerSection);
 loadHTML(url + 'templates/footer.html', footerSection);
 
-console.log(window.location.search);
+
+

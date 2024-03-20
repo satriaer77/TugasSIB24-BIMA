@@ -52,8 +52,5 @@ let endpoint  = `${prefixUrl}/${keyAPI}/${resources}`;
       })
       .then(function (res) {
               postCont.insertAdjacentHTML("afterbegin", ``+res['content']);
-              // console.log(res['content'].replace(/"([^"]+(?="))"/g, '$1'));
-              // postCont.innerHTML = res['content'];
-
       });
   }

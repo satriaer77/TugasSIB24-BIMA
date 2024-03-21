@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/styles/style.css">
+    <title>Postingan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main data-menu="postingan">
+        <!-- ======= HEADER ======= -->
+        <section id="header"></section>
+        <!-- ======= END HEADER ======= -->
+
+ 
+        <!-- ======= CONTENT ======= -->
+        <section id="content">
+            <div class="content-posts">
+                <h1 class="text-spartan">DAFTAR POSTINGAN</h1>
+                <div id="postHero" class="posts-container text-spartan">
+                    
+                </div>
+            </div>
+        </section>
+        <!-- ======= END CONTENT ======= -->
+
+
+        <!-- ======= FOOTER ======= -->
+        <section id="footer"></section>
+        <!-- ======= END FOOTER ======= -->
+
+
+    </main>
+
+    <script src="javascript/main.js" defer></script>
+    <script src="javascript/apiFunc.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            getPosts(function (posts) {
+                const heroCont = document.getElementById('postHero');
+                posts.forEach(post => {
+                    heroCont.insertAdjacentHTML("afterbegin", `
+                        <div class="card">
+                            <div class="card-cover" style="background-image: url('${post["cover"]}');background-size: cover;background-position: center;"></div>
+                            <div class="card-content">
+                                <div class="card-title text-light">${post["title"]}</div>
+                                <a href="jsdasar.html?id=${post["_id"]}" class="card-button button button-light">Baca</a>
+                            </div>
+                        </div>`);
+                });
+            });
+         });
+    </script>
+</body>
+</html>

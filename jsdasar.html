@@ -19,14 +19,14 @@
         <!-- ======= CONTENT ======= -->
         <section id="content">
             <div id="carousel">
-                <div class="carousel-item active" style="background-image: url('https://it.telkomuniversity.ac.id/wp-content/uploads/2023/01/Javascript-adalah-1.jpg');background-size: cover;background-position: center;"></div>
+                <div class="carousel-item active" style="background-size: cover;background-position: center;"></div>
             </div>
             <center>
                 <div class="content-title-card text-spartan">
                     <div class="content-title-card-container">
-                        <span class="content-tag">Tugas</span>
-                        <h1>Javascript</h1>
-                        <span>2024-03-08</span>
+                        <span id="contentCategory" class="content-tag">Tugas</span>
+                        <h1 id="contentTitle">Javascript</h1>
+                        <span id="contentDate">2024-03-08</span>
                     </div>
                 </div>
             </center>
@@ -54,8 +54,20 @@
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             getPost(parseURLParams('id'), function (post) {
-                const postContent = document.getElementById('post-content');
-                postContent.innerHTML = post.content;
+                const postContent   = document.getElementById('post-content');
+                const postTitle     = document.getElementById('contentTitle');
+                const postDate      = document.getElementById('contentDate');
+                const postCategory  = document.getElementById('contentCategory');
+                const postCover     = document.querySelector('#carousel .carousel-item');
+
+
+                // console.log(post.cover);
+                postCover.style.background = `url('${post.cover}')`;
+                postCover.style.size     = 'cover';
+                postTitle.textContent    = post.title;
+                postDate.textContent     = post.date;
+                postCategory.textContent = post.category;
+                postContent.innerHTML    = post.content;
             });
          });
     </script>

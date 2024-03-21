@@ -199,10 +199,16 @@ main
     font-size: 2.5em;
     text-wrap: wrap;
     color: #E73626;
+    white-space: initial;
 }
-
+#post-content
+{
+    box-sizing: border-box;
+}
 #post-content img
 {
+    width:100%;
+    height: auto;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -505,6 +511,11 @@ main
     font-weight: bold;
     font-size: 2em;
     text-align: center;
+    width: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
 }
 .card-content
 {
@@ -641,6 +652,7 @@ main
     font-size: 2em;
     box-sizing: border-box;
     padding: 0 1rem;
+    white-space: initial;
 }
 .post-card-button {
     grid-area: button;

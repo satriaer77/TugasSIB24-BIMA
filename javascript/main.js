@@ -67,7 +67,7 @@ function renderPostsManajemen()
         posts.forEach(post => {
             sectionManajemen.insertAdjacentHTML('afterbegin', 
             `<div class="post-card">
-                <div class="post-card-cover" style="background:url('${post.cover}')"></div>
+                <div class="post-card-cover" style="background:url('${post.cover}') no-repeat;background-size: cover;background-position: center;"></div>
                 <span class="post-card-title">${post.title}</span>
                 <div class="post-card-button">
                     <span class="button button-primary" data-idpst="${post._id}" onclick="renderEditPost(this)">Edit</span>

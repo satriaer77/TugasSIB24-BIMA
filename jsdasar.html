@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main data-menu="materi">
+    <main data-menu="postingan">
         <!-- ======= HEADER ======= -->
         <section id="header"></section>
         <!-- ======= END HEADER ======= -->
@@ -25,7 +25,7 @@
                 <div class="content-title-card text-spartan">
                     <div class="content-title-card-container">
                         <span class="content-tag">Tugas</span>
-                        <h1>Tugas Javascript</h1>
+                        <h1>Javascript</h1>
                         <span>2024-03-08</span>
                     </div>
                 </div>
@@ -53,7 +53,10 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-            getPost(parseURLParams('id'));
+            getPost(parseURLParams('id'), function (post) {
+                const postContent = document.getElementById('post-content');
+                postContent.innerHTML = post.content;
+            });
          });
     </script>
 

@@ -65,6 +65,11 @@ main
     font-family: 'League Spartan', sans-serif;
 }
 
+.hidden
+{
+    display: none !important;
+}
+
 /* ----- END STYLING ----- */
 
 
@@ -282,6 +287,82 @@ main
     display: flex;
     flex-direction: column;
     gap:2rem;
+    padding: 2rem;
+}
+#postCover
+{
+    height: 40vh;
+    width: 100%;
+    background-color: #E73626;
+    border-radius: inherit;
+}
+
+#api-menu
+{
+    position: sticky;
+    top:0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.api-menu-nav
+{
+    border: #E73626 1px solid;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.api-menu-nav nav , .api-menu-nav nav a,  .api-menu-nav nav a:active
+{
+    color: #E73626;
+    padding: 1rem 1.2rem;
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.api-menu-nav nav:hover
+{
+    opacity: 0.7;
+}
+.api-menu-nav nav.active, .api-menu-nav nav.active a
+{
+    font-weight: bold;
+    color: #F8FFFF;
+    background-color: #E73626;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+.container-api
+{
+    display: grid;
+    grid-template-columns: 10% 85%;
+    justify-content: space-between;
+}
+
+.manajemen-post-container
+{
+    display: grid;
+    grid-template-columns: 100%;
+    /* background-color: #E73626; */
+    gap:1rem;
     padding: 2rem;
 }
 /* ----- END CONTENT ----- */
@@ -526,11 +607,102 @@ main
 }
 
 
+.post-card
+{
+    display: grid;
+    grid-template-columns: 25% 60% 15%;
+    grid-template-areas: 
+    'cover title category'
+    'cover button date';
+
+    background-color: #e4dedd;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.post-card-cover {
+    grid-area: cover;
+    height: 10rem;
+    background-color: #E73626;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.post-card-title {
+    grid-area: title;
+    color: #E73626;
+    font-weight: bold;
+    font-size: 2em;
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+.post-card-button {
+    grid-area: button;
+    box-sizing: border-box;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    
+}
+.post-card-category {
+    grid-area: category;
+    display: flex;
+    align-items:start;
+    justify-content: end;
+}
+.post-card-date {
+    grid-area: date;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.post-card-date span {
+    color: #242424;
+}
 
 /* ----- END COMPONENT ----- */
 
 
 
+
+/* CKEDITOR */
+.ck-content {
+    font-family: 'Raleway', sans-serif;
+    color: #F8FFFF;
+    background-color: aqua;
+    border-radius: 5px;
+    height: calc(100vh - 8rem - 6rem);
+}
+
+
+.ck-editor__editable, .ck-toolbar{
+    /* border-radius: 2rem !important; */
+    /* border: 1px solid aqua; */
+    border: none !important;
+    background-color: #e4dedd !important;
+    color: #242424 !important;
+}
+
+
+.ck-toolbar
+{
+    color: #F8FFFF !important;
+    border : none !important;
+    background-color: #E73626 !important;
+    border-radius: 2rem 2rem 0 0 !important;
+}
+
+.ck-editor__editable
+{
+    border-radius: 0 0 2rem 2rem !important;
+}
 
 
 

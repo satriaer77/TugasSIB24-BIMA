@@ -40,8 +40,6 @@ function loadHTML(file, section) {
     xhr.onload = function () {
         if (this.status == 200) {
             section.innerHTML = xhr.responseText;
-            const headerSection = document.getElementById("header");
-
             
             document.querySelector(`#${menuHalaman}`).classList.add('active');
 
@@ -63,3 +61,42 @@ loadHTML(url + 'templates/footer.html', footerSection);
 
 
 
+function renderPostsManajemen()
+{
+    getPosts(function (posts) {
+        posts.forEach(post => {
+            sectionManajemen.insertAdjacentHTML('afterbegin', 
+            `<div class="post-card">
+                <div class="post-card-cover" style="background:url('${post.cover}')"></div>
+                <span class="post-card-title">${post.title}</span>
+                <div class="post-card-button">
+                    <span class="button button-primary" data-idpst="${post._id}" onclick="renderEditPost(this)">Edit</span>
+                    <span class="button button-primary" data-idpst="${post._id}" onclick="hapusPost(this)">Hapus</span>
+                </div>
+                <div class="post-card-category">
+                    <span class="content-tag">${post.category}</span>
+                </div>
+                <div class="post-card-date">
+                    <span>${post.date}</span>
+                </div>
+            </div>`);
+        });
+
+    });
+}
+
+function renderEditPost(elm)
+{
+    switchTambah();
+    getPost(elm.dataset.idpst, function (post) {
+        editor.setData(post.content);
+        coverUrl.value = post.cover;
+        postTitle.value = post.title;
+        postCategory.value = post.category;
+        submitPost.textContent = "Edit Post";
+        submitPost.setAttribute( "onclick", `editPost('${elm.dataset.idpst}')` );
+        
+    });
+
+    
+}

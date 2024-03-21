@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/styles/style.css">
+    <title>Create Post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+
+
+
+</head>
+<body>
+    <main data-menu="api">
+        <!-- ======= HEADER ======= -->
+        <section id="header"></section>
+        <!-- ======= END HEADER ======= -->
+ 
+        <!-- ======= CONTENT ======= -->
+        <section id="content">
+            <div class="container-api text-spartan">
+                <div>
+                    <div id="api-menu" class="">
+                        <div class="api-menu-nav">
+                            <nav id="mnjPst" class="active" onclick="switchManajemen()"><a href="#manajemen-post">MANAJEMEN POST</a></nav>
+                            <nav id="tmPst" ><a href="#manajemen-post" onclick="switchTambah()">TAMBAH POST</a></nav> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-comp text-spartan">
+                    <form id="tmLyt" action="" class="form-container hidden">
+                         <div class="input-comp">
+                            <div id="postCover"></div>
+                         </div>
+                         <div class="input-comp">
+                             <label for="coverUrl">COVER URL</label>
+                             <input type="text" id="coverUrl" class="text-kanit" name="cover" placeholder="http://pic.com/picture">
+                         </div>
+                         <div class="input-comp">
+                             <label for="postTitle">TITLE</label>
+                             <input type="text" id="postTitle" class="text-kanit" name="title" placeholder="Judul Postingan">
+                         </div>
+                         <div class="input-comp">
+                             <label for="postCategory">CATEGORY</label>
+                             <input type="text" id="postCategory" class="text-kanit" name="category" placeholder="Game Development">
+                         </div>
+                         
+                        <div id="editor">
+                            <p>Ketikkan sesuatu</p>
+                        </div>
+
+                        <input type="hidden" name="content" id="postContent"> 
+    
+    
+                        <button id="submitPost" class="button button-primary" type="button" onclick="tambahPost()">Tambah Post</button>
+                         
+                    </form>
+                    <div id="mnjLyt" class="manajemen-post-container"></div>
+                 </div>
+            </div>
+
+
+        </section>
+        <!-- ======= END CONTENT ======= -->
+
+
+        <!-- ======= FOOTER ======= -->
+        <section id="footer"></section>
+        <!-- ======= END FOOTER ======= -->
+
+
+    </main>
+    <script>
+        const navManajemen      = document.getElementById('mnjPst');
+        const navTambah         = document.getElementById('tmPst');
+
+        const sectionManajemen  = document.getElementById('mnjLyt');
+        const sectionTambah     = document.getElementById('tmLyt');
+        const submitPost        = document.getElementById('submitPost');
+
+        
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            renderPostsManajemen();
+        });
+
+        function switchManajemen()
+        {
+            navManajemen.classList.add("active");
+            navTambah.classList.remove("active");
+
+            sectionManajemen.classList.remove("hidden");
+            sectionTambah.classList.add("hidden");
+
+            renderPostsManajemen();
+        
+        }
+
+        function switchTambah()
+        {
+            navManajemen.classList.remove("active");
+            navTambah.classList.add("active");
+            sectionTambah.classList.remove("hidden");
+            sectionManajemen.innerHTML = "";
+            sectionManajemen.classList.add("hidden");
+            submitPost.textContent = "Tambah Post";
+        }
+
+
+    </script>
+
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/contentEditor.js"></script>
+    <script src="javascript/apiFunc.js"></script>
+    
+
+</body>
+</html>
+
+

@@ -1,5 +1,5 @@
 let prefixUrl = "https://crudcrud.com/api";
-let keyAPI    = "4b2b8e24bbb944dfba9442917ff08308";
+let keyAPI    = "4bec4262383a404e9c8625b0bb6a1805";
 let resources = "posts";
 let endpoint  = `${prefixUrl}/${keyAPI}/${resources}`;
 
@@ -9,48 +9,86 @@ let endpoint  = `${prefixUrl}/${keyAPI}/${resources}`;
 
   function tambahPost()
   {
-    fetch(`${url}${keyAPI}`, {
+    fetch(`${endpoint}`, {
         method: "POST",
-        mode:"no-cors"
+        body: JSON.stringify({
+          cover: coverUrl.value,
+          title: postTitle.value,
+          category: postCategory.value,
+          date: today,
+          content: postContent
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
       })
         .then(function (response) {
             response.json();
-        })
-        .then()
+            alert("Berhasil Menambahkan Post");
+            location.reload();
+        });
   }
 
 
-  function getPosts() {
-    const heroCont = document.getElementById('postHero');
-    fetch(`${endpoint}`, {
-      method: "GET",
-      // mode: "no-cors"
-    }).then(function (response) {
-          return response.json();
-      })
-      .then(function (res) {
-          res.forEach(post => {
-              heroCont.insertAdjacentHTML("afterbegin", `
-              <div class="card">
-                  <div class="card-cover" style="background-image: url('${post["cover"]}');background-size: cover;background-position: center;"></div>
-                  <div class="card-content">
-                      <div class="card-title text-light">${post["title"]}</div>
-                      <a href="jsdasar.html?id=${post["_id"]}" class="card-button button button-light">Baca</a>
-                  </div>
-              </div>`);
-          });
+  function editPost(idPost)
+  {
+    fetch(`${endpoint}/${idPost}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          // id: idPost,
+          cover: coverUrl.value,
+          title: postTitle.value,
+          category: postCategory.value,
+          date: today,
+          content: postContent
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }})
+      .then(function (response) {
+          response.json();
+          alert('Berhasil Mengubah');
+          submitPost.textContent = "Tambah Post";
+          location.reload();
       });
   }
 
 
-  function getPost(id) {
-    const postCont = document.getElementById('post-content');
+  function hapusPost(elm)
+  {
+    const idPost = elm.dataset.idpst;
+    console.log(idPost);
+    fetch(`${endpoint}/${idPost}`, {
+        method: "DELETE"
+      })
+      .then(function (response) {
+          alert('Berhasil Dihapus');
+          location.reload();
+      });
+  }
+
+
+  function getPosts(callbackSuccess) {
+    fetch(`${endpoint}`, {
+      method: "GET",
+    }).then(function (response) {
+          return response.json();
+      })
+      .then(function (res) {
+        callbackSuccess(res);
+      });
+  }
+
+
+
+
+  function getPost(id, callbackSuccess) {
     fetch(`${endpoint}/${id}`, {
       method: "GET",
     }).then(function (response) {
           return response.json();
       })
       .then(function (res) {
-              postCont.insertAdjacentHTML("afterbegin", ``+res['content']);
+        callbackSuccess(res);
       });
   }

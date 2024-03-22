@@ -42,7 +42,7 @@ function loadHTML(file, section) {
             section.innerHTML = xhr.responseText;
             
             document.querySelector(`#${menuHalaman}`).classList.add('active');
-
+            
         }
         else {
             console.warn("Nggak bisa dapat hehe...");
@@ -97,6 +97,6 @@ function renderEditPost(elm)
         submitPost.setAttribute( "onclick", `editPost('${elm.dataset.idpst}')` );
         
     });
-
+    
     
 }

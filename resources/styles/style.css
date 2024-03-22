@@ -574,7 +574,7 @@ main
     font-size: 0.8rem;
     text-transform: uppercase;
 }
-.input-comp input[type="text"], input[type="tel"], input[type="email"]
+.input-comp input[type="text"], input[type="tel"], input[type="email"], input[type="password"]
 {
     border: none;
     outline: none;
@@ -735,6 +735,10 @@ main
     .header-menu-container
     {
         flex-direction: column;
+    }
+    .header-menu
+    {
+        width: 100%;
     }
     main
     {

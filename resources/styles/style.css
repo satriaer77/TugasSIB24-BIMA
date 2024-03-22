@@ -90,6 +90,7 @@ main
     -webkit-box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
     box-shadow: 0px 42px 88px -54px rgba(0,0,0,0.75);
+    z-index: 20;
     
 }
 .header-container
@@ -170,8 +171,9 @@ main
 .posts-container
 {
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 1.5rem;
 }
 .content-title-card
 {
@@ -726,10 +728,105 @@ main
     {
         max-width: 90%;
     }
+    .header-container
+    {
+        padding: 1rem;
+    }
+    .header-menu-container
+    {
+        flex-direction: column;
+    }
     main
     {
         width:100%;
         padding:0 1rem 1rem 1rem;
         box-sizing: border-box;
     }
+
+
+    .container-api
+    {
+        grid-template-columns: 100%;
+        gap :2rem;
+    }
+
+
+    #api-menu
+    {
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .api-menu-nav
+    {
+        display: flex;
+    }
+
+    .api-menu-nav nav , .api-menu-nav nav a,  .api-menu-nav nav a:active
+    {
+        font-size: 0.6rem;
+        writing-mode: unset;
+        -webkit-writing-mode: unset;
+        -ms-writing-mode: unset;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+
+
+
+
+    .post-card
+    {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+        'date category'
+        'cover cover'
+        'title title'
+        'button button';
+    }
+    .post-card-cover {
+        height: 10rem;
+        margin:1rem 0;
+    }
+    .post-card-title {
+        font-size: 1.5em;
+        padding: 1rem 0;
+    }
+    .post-card-button {
+        box-sizing: border-box;
+        padding: 1rem 1rem 0 1rem;
+        display: flex;
+        gap: 1rem;
+        align-items: end;
+        
+    }
+    .post-card-category {
+        display: flex;
+        align-items:start;
+        justify-content: end;
+    }
+    .post-card-date {
+        
+        align-items: end;
+        justify-content: start;
+    }
+    .post-card-date span {
+        color: #242424;
+    }
+    .post-card-button {
+        justify-content: space-between;
+
+    }
+
+
+
+
+
   }

@@ -1,5 +1,5 @@
 let prefixUrl = "https://crudcrud.com/api";
-let keyAPI    = "aaad044b872d4581bc0cecce4472fa8b";
+let keyAPI    = "4b5f0657f8f64545a7ff511613b0ce75";
 let resources = "posts";
 let endpoint  = `${prefixUrl}/${keyAPI}/${resources}`;
 
